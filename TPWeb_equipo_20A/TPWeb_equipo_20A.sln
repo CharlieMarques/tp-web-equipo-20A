@@ -5,9 +5,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion.csproj", "{A5328AC5-F661-4DBB-A913-28F84718ED11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo-Comercio", "..\..\tp-winform-equipo-20A\Catalogo-Comercio\Catalogo-Comercio.csproj", "{3D15DD11-792D-4C98-8A05-0F993AF3C3D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo-Comercio", "..\Catalogo-Comercio\Catalogo-Comercio.csproj", "{3D15DD11-792D-4C98-8A05-0F993AF3C3D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\..\tp-winform-equipo-20A\dominio\dominio.csproj", "{DC7613A7-6FE8-45D9-A733-E5A1AF58600B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\dominio\dominio.csproj", "{DC7613A7-6FE8-45D9-A733-E5A1AF58600B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

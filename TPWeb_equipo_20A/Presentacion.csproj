@@ -155,16 +155,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\tp-winform-equipo-20A\Catalogo-Comercio\Catalogo-Comercio.csproj">
-      <Project>{3d15dd11-792d-4c98-8a05-0f993af3c3d5}</Project>
-      <Name>Catalogo-Comercio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\tp-winform-equipo-20A\dominio\dominio.csproj">
-      <Project>{dc7613a7-6fe8-45d9-a733-e5a1af58600b}</Project>
-      <Name>dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

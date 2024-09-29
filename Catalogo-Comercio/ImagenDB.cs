@@ -41,6 +41,36 @@ namespace Catalogo_Comercio
                 datos.cerrarConexion();
             }
         }
+        /*public List<Imagen>listar(int id)
+        {
+            List<Imagen> lista = new List<Imagen>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("select imagenUrl from IMAGENES where IdArticulo = @idArticulo");
+                datos.setParametro("idArticulo", id);
+                datos.Leer();
+                while (datos.Lector.Read())
+                {
+                    Imagen aux = new Imagen();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    lista.Add(aux);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }*/
 
         public List<Imagen> GetImagenes(int IdArticulo)
         {

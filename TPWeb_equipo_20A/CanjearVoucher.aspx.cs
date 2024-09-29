@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Catalogo_Comercio;
+
 
 namespace TPWeb_equipo_20A
 {
@@ -11,6 +14,30 @@ namespace TPWeb_equipo_20A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnAvanzar_Click(object sender, EventArgs e)
+        {
+            Voucher voucher = new Voucher();
+            VoucherDB voucherDB = new VoucherDB();
+            try
+            {
+                if(voucherDB.voucherValido(txtVoucher.Text))
+                {
+                    Response.Redirect("ListaArticulos.aspx");
+                }
+                else
+                {
+                    txtVoucher.Text = "Codigo no valido";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
 
         }
     }

@@ -355,7 +355,8 @@ a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
 }
 
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
+a:not([
+    ]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }

@@ -13,5 +13,10 @@ namespace TPWeb_equipo_20A
         {
 
         }
+
+        protected void btnComenzar_Clicked(object sender, EventArgs e)
+        {
+            Response.Redirect("CanjearVoucher.aspx", false);
+        }
     }
 }

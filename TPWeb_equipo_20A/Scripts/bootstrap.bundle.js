@@ -714,7 +714,9 @@
   const getSelector = element => {
     let selector = element.getAttribute('data-bs-target');
     if (!selector || selector === '#') {
-      let hrefAttribute = element.getAttribute('href');
+      let 
+
+Attribute = element.getAttribute('href');
 
       // The only valid content that could double as a selector are IDs or classes,
       // so everything starting with `#` or `.`. If a "real" URL is used as the selector,

@@ -28,7 +28,7 @@ namespace Catalogo_Comercio
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
                 throw ex;
             }
             

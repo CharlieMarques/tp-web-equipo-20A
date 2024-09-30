@@ -28,13 +28,12 @@ namespace TPWeb_equipo_20A
                 repRepetidor.DataSource = ListaArticulo;
                 repRepetidor.DataBind();
             }
-            
-
         }
 
         protected void btnSeleccionar_Click(object sender, EventArgs e)
         {
-
+            string ArticuloId = ((Button)sender).CommandArgument;
+            Response.Redirect("Contacto.aspx", false);
         }
     }
 }

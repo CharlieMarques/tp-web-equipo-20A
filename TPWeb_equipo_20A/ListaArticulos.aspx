@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ListaArticulos.aspx.cs" Inherits="TPWeb_equipo_20A.ListaArticulos" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .card {
@@ -13,15 +12,15 @@
     <div>
         <h1>Elegi tu premio</h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10px; ">
         <asp:Repeater runat="server" ID="repRepetidor">
             <ItemTemplate>
-                <div class="card">
+                <div class="card" style="margin: 10px; max-width: 30%">
                     <div id="carousel<%# Eval("Id") %>" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <asp:Repeater runat="server" DataSource='<%# Eval("Imagenes") %>'>
                                 <ItemTemplate>
-                                    <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
+                                    <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>" style="height: 400px; align-content: center" >
                                         <img src='<%# Eval("UrlImagen") %>' class="d-block img-fluid fixed-size" alt="Imagen del Articulo" />
                                     </div>
                                 </ItemTemplate>
@@ -36,15 +35,13 @@
                             <span class="visually-hidden">Siguiente</span>
                         </button>
                     </div>
-
                     <div class="card-body">
                         <h5 class="card-title"><%# Eval("Nombre") %></h5>
                         <p class="card-text"><%# Eval("Descripcion") %></p>
-                        <asp:Button Text="Seleccionar" CssClass="btn btn-primary" runat="server" ID="btnSeleccionar" OnClick="btnSeleccionar_Click" />
+                        <asp:Button Text="Seleccionar" CssClass="btn btn-primary" runat="server" ID="btnSeleccionar" CommandArgument='<%# Eval("Id") %>' CommandName="ArticuloId" OnClick="btnSeleccionar_Click"/>
                     </div>
                 </div>
             </ItemTemplate>
         </asp:Repeater>
     </div>
-
 </asp:Content>

@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Catalogo_Comercio;
 
-
 namespace TPWeb_equipo_20A
 {
     public partial class CanjearVoucher : System.Web.UI.Page
@@ -25,20 +24,18 @@ namespace TPWeb_equipo_20A
             {
                 if(voucherDB.voucherValido(txtVoucher.Text))
                 {
-                    Response.Redirect("ListaArticulos.aspx");
+                    Response.Redirect("ListaArticulos.aspx", false);
                 }
                 else
                 {
                     txtVoucher.Text = "Codigo no valido";
                 }
-                
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
                 throw;
             }
-
         }
     }
 }

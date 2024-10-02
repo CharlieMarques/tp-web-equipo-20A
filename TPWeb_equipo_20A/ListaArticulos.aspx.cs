@@ -35,5 +35,11 @@ namespace TPWeb_equipo_20A
             string ArticuloId = ((Button)sender).CommandArgument;
             Response.Redirect("Contacto.aspx", false);
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Default.aspx", false);
+        }
     }
 }

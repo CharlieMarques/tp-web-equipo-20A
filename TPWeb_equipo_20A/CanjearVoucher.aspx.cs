@@ -19,16 +19,26 @@ namespace TPWeb_equipo_20A
         protected void btnAvanzar_Click(object sender, EventArgs e)
         {
             Voucher voucher = new Voucher();
+            voucher.voucherValido = false;
             VoucherDB voucherDB = new VoucherDB();
             try
             {
                 if(voucherDB.voucherValido(txtVoucher.Text))
                 {
+                    voucher.voucherValido = true;
+                    Session.Add("voucher", voucher);
                     Response.Redirect("ListaArticulos.aspx", false);
                 }
+                else if(voucherDB.voucherCanjeado(txtVoucher.Text))
+                {
+                    Session.Add("Canjeado", voucher);
+                    Response.Redirect("VoucherInvalido.aspx", false);
+                }
+                                    
                 else
                 {
-                    txtVoucher.Text = "Codigo no valido";
+                    Session.Add("Invalido", voucher);
+                    Response.Redirect("VoucherInvalido.aspx", false);                  
                 }
             }
             catch (Exception ex)

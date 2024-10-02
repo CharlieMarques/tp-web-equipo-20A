@@ -23,9 +23,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link <%# (CurrentPage == "CanjearVoucher.aspx" || CurrentPage == "ListaArticulos.aspx" || CurrentPage == "Contacto.aspx") ? "" : "disabled" %>" href="CanjearVoucher.aspx">Canjea tu Voucher</a>
-                        <a class="nav-link <%# (CurrentPage == "ListaArticulos.aspx" || CurrentPage == "Contacto.aspx") ? "" : "disabled" %>" href="ListaArticulos.aspx">Lista de Productos</a>                        
-                        <a class="nav-link <%# CurrentPage == "Contacto.aspx" ? "" : "disabled" %>" href="Contacto.aspx">Contacto</a>
+                        <a class="nav-link<%-- <%# (CurrentPage == "CanjearVoucher.aspx" || CurrentPage == "ListaArticulos.aspx" || CurrentPage == "Contacto.aspx") ? "" : "disabled" %>--%>" href="CanjearVoucher.aspx">Canjea tu Voucher</a>
+                        <a class="nav-link<%-- <%# (CurrentPage == "ListaArticulos.aspx" || CurrentPage == "Contacto.aspx") ? "" : "disabled" %>--%>" href="ListaArticulos.aspx">Lista de Productos</a>                        
+                        <a class="nav-link<%-- <%# CurrentPage == "Contacto.aspx" ? "" : "disabled" %>--%>" href="Contacto.aspx">Contacto</a>
                     </div>
                 </div>
             </div>
@@ -35,5 +35,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
 </html>

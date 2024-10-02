@@ -83,6 +83,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="ListaArticulos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -90,6 +92,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="VoucherInvalido.aspx" />
     <Content Include="Web.config" />
     <Content Include="Contacto.aspx" />
   </ItemGroup>
@@ -107,6 +110,16 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ListaArticulos.aspx.cs">
       <DependentUpon>ListaArticulos.aspx</DependentUpon>
@@ -129,6 +142,13 @@
     </Compile>
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherInvalido.aspx.cs">
+      <DependentUpon>VoucherInvalido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VoucherInvalido.aspx.designer.cs">
+      <DependentUpon>VoucherInvalido.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +191,10 @@
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{dc7613a7-6fe8-45d9-a733-e5a1af58600b}</Project>
       <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Seguridad\Seguridad.csproj">
+      <Project>{79955c3e-f7be-43aa-8c31-ce5d0020b327}</Project>
+      <Name>Seguridad</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

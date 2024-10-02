@@ -13,7 +13,7 @@
             <h5 style="margin: 5px">
                 Si ya tienes un código,
             </h5>
-            <asp:Button CssClass="btn btn-primary" style="margin:5px;" ID="btnComenzar" runat="server" Text="Comanzar" OnClick="btnComenzar_Clicked" />
+            <asp:Button CssClass="btn btn-primary" style="margin:5px;" ID="btnComenzar" runat="server" Text="Comenzar" OnClick="btnComenzar_Clicked" />
         </div>
     </div>
 </asp:Content>

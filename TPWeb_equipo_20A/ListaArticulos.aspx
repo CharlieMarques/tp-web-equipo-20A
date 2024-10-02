@@ -45,5 +45,8 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <div>
+            <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-danger" ID="btnCancelar" OnClick="btnCancelar_Click" />
+        </div>
     </div>
 </asp:Content>

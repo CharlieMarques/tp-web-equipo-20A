@@ -28,12 +28,12 @@ namespace TPWeb_equipo_20A
 
         }
 
-        protected void txtDocumento_TextChanged(object sender, EventArgs e)
+        protected void txtDNI_TextChanged(object sender, EventArgs e)
         {            
             ClienteBD clienteBD = new ClienteBD();
             try
             {
-                Cliente cliente = clienteBD.CargarCliente(txtDocumento.Text);
+                Cliente cliente = clienteBD.CargarCliente(txtDNI.Text);
                 txtEmail.Text = cliente.Email;
                 txtNombre.Text = cliente.Nombre;
                 txtApellido.Text = cliente.Apellido;
@@ -50,6 +50,10 @@ namespace TPWeb_equipo_20A
                 Session.Add("Error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
             }
+        }
+        protected void CheckBoxRequired_ServerValidate(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = chkBoxParticipar.Checked;
         }
     }
 }

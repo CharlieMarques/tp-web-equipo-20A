@@ -12,5 +12,6 @@ namespace Dominio
         public int idCliente { get; set; }
         public DateTime FechaCanje { get; set; }
         public int idArticulo { get; set; }
+        public bool voucherValido {  get; set; }
     }
 }

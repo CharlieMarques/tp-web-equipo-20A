@@ -31,7 +31,35 @@ namespace Catalogo_Comercio
                 Console.WriteLine(ex.ToString());
                 throw ex;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
             
+        }
+        public bool voucherCanjeado(string voucher)
+        {
+            try
+            {
+                datos.setConsulta("Select idCliente from Vouchers where CodigoVoucher = @Vouch");
+                datos.setParametro("@Vouch", voucher);
+                datos.Leer();
+                while (datos.Lector.Read())
+                {
+                    if (!(datos.Lector["idCliente"] is DBNull))
+                        return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

@@ -32,14 +32,13 @@ namespace TPWeb_equipo_20A
                 }
                 else if(voucherDB.voucherCanjeado(txtVoucher.Text))
                 {
-                    Session.Add("Canjeado", voucher);
-                    Response.Redirect("VoucherInvalido.aspx", false);
-                }
-                                    
+                    Session.Add("Error", "Voucher ya canjeado! Ingrese uno nuevo.");
+                    Response.Redirect("Errores.aspx", false);
+                }         
                 else
                 {
-                    Session.Add("Invalido", voucher);
-                    Response.Redirect("VoucherInvalido.aspx", false);                  
+                    Session.Add("Error", "Ingrese un voucher válido!");
+                    Response.Redirect("Errores.aspx", false);                  
                 }
             }
             catch (Exception ex)

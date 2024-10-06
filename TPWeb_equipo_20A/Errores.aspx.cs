@@ -12,6 +12,10 @@ namespace TPWeb_equipo_20A
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session.Count > 0)
+            {
+                lblMensaje.Text = Session["Error"].ToString();
+            }
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

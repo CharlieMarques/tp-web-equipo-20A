@@ -26,7 +26,7 @@ namespace TPWeb_equipo_20A
         }
         protected void btnParticipar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (Page.IsValid && ((Voucher)Session["voucher"]).idArticulo != 0)
             {
                 try
                 {
@@ -46,7 +46,7 @@ namespace TPWeb_equipo_20A
                 catch (Exception ex)
                 {
                     Session.Add("Error", ex.ToString());
-                    Response.Redirect("VoucherInvalido.aspx", false);
+                    Response.Redirect("Errores.aspx", false);
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace TPWeb_equipo_20A
             catch (Exception ex)
             {
                 Session.Add("Error", ex.ToString());
-                Response.Redirect("VoucherInvalido.aspx", false);
+                Response.Redirect("Errores.aspx", false);
                 return -1;
             }
         }
@@ -100,7 +100,7 @@ namespace TPWeb_equipo_20A
             catch (Exception ex)
             {
                 Session.Add("Error", ex.ToString());
-                Response.Redirect("VoucherInvalido.aspx", false);
+                Response.Redirect("Errores.aspx", false);
             }
         }
         protected void CheckBoxRequired_ServerValidate(object sender, ServerValidateEventArgs e)

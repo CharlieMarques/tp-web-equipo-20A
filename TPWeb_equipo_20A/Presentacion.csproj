@@ -93,7 +93,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="VoucherInvalido.aspx" />
+    <Content Include="Errores.aspx" />
     <Content Include="Web.config" />
     <Content Include="Contacto.aspx" />
   </ItemGroup>
@@ -144,12 +144,12 @@
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VoucherInvalido.aspx.cs">
-      <DependentUpon>VoucherInvalido.aspx</DependentUpon>
+    <Compile Include="Errores.aspx.cs">
+      <DependentUpon>Errores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VoucherInvalido.aspx.designer.cs">
-      <DependentUpon>VoucherInvalido.aspx</DependentUpon>
+    <Compile Include="Errores.aspx.designer.cs">
+      <DependentUpon>Errores.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

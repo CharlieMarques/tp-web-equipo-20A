@@ -27,6 +27,7 @@ namespace TPWeb_equipo_20A
                 {
                     voucher.voucherValido = true;
                     Session.Add("voucher", voucher);
+                    ((Voucher)Session["voucher"]).Codigo = txtVoucher.Text;
                     Response.Redirect("ListaArticulos.aspx", false);
                 }
                 else if(voucherDB.voucherCanjeado(txtVoucher.Text))

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ListaArticulos.aspx.cs" Inherits="TPWeb_equipo_20A.ListaArticulos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .card {
@@ -10,10 +11,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="margin-left: 2%; margin-right: 2%; margin-top: 2%">
-        <div style="margin-bottom: 30px">
-            <h1>Elegi tu premio</h1>
-        </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div style="margin-bottom: 15px; align-content: center" class="col-md-10">
+                <h1>Elegi tu premio</h1>
+            </div>
+            <div class="col-md-2" style="margin-bottom: 15px; align-content: center">
+                <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-danger" ID="btnCancelar" OnClick="btnCancelar_Click" />
+            </div>
             <asp:Repeater runat="server" ID="repRepetidor">
                 <ItemTemplate>
                     <div class="card" style="margin: 10px; max-width: 30%">
@@ -21,7 +25,7 @@
                             <div class="carousel-inner">
                                 <asp:Repeater runat="server" DataSource='<%# Eval("Imagenes") %>'>
                                     <ItemTemplate>
-                                        <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>" style="height: 400px; align-content: center" >
+                                        <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>" style="height: 400px; align-content: center">
                                             <img src='<%# Eval("UrlImagen") %>' class="d-block img-fluid fixed-size" alt="Imagen del Articulo" />
                                         </div>
                                     </ItemTemplate>
@@ -39,14 +43,11 @@
                         <div class="card-body">
                             <h5 class="card-title"><%# Eval("Nombre") %></h5>
                             <p class="card-text"><%# Eval("Descripcion") %></p>
-                            <asp:Button Text="Seleccionar" CssClass="btn btn-primary" runat="server" ID="btnSeleccionar" CommandArgument='<%# Eval("Id") %>' CommandName="ArticuloId" OnClick="btnSeleccionar_Click"/>
+                            <asp:Button Text="Seleccionar" CssClass="btn btn-primary" runat="server" ID="btnSeleccionar" CommandArgument='<%# Eval("Id") %>' CommandName="ArticuloId" OnClick="btnSeleccionar_Click" />
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-        </div>
-        <div>
-            <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-danger" ID="btnCancelar" OnClick="btnCancelar_Click" />
         </div>
     </div>
 </asp:Content>

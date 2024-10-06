@@ -7,14 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace TPWeb_equipo_20A
 {
-    public partial class Error : System.Web.UI.Page
+    public partial class CanjeCompletado : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Error"] != null)
-            {
-                lblMensaje.Text = Session["Error"].ToString();
-            }
+
+        }
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx", false);
+            Session.Clear();
         }
     }
 }

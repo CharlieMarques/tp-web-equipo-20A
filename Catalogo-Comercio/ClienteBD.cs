@@ -35,7 +35,34 @@ namespace Catalogo_Comercio
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public int AgregarCliente(Cliente nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int idCliente;
 
+            try
+            {
+                datos.setConsulta("insert into Clientes (Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP) Values (@Documento, @Nombre, @Apellido, @Email, @Direccion, @Ciudad, @CP); SELECT SCOPE_IDENTITY();");
+                datos.setParametro("@Documento", nuevo.Documento);
+                datos.setParametro("@Nombre", nuevo.Nombre);
+                datos.setParametro("@Apellido", nuevo.Apellido);
+                datos.setParametro("@Email", nuevo.Email);
+                datos.setParametro("@Direccion", nuevo.Direccion);
+                datos.setParametro("@Ciudad", nuevo.Ciudad);
+                datos.setParametro("@CP", nuevo.CodigoPostal);
+                return idCliente = datos.ejecutarConsultaScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Mensaje de error: {ex.Message}", $"Error al realizar la consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Error: {ex.ToString()}");
                 throw ex;
             }
             finally

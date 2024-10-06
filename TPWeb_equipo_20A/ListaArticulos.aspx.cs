@@ -32,7 +32,7 @@ namespace TPWeb_equipo_20A
 
         protected void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            string ArticuloId = ((Button)sender).CommandArgument;
+            ((Voucher)Session["voucher"]).idArticulo = int.Parse(((Button)sender).CommandArgument.ToString());
             Response.Redirect("Contacto.aspx", false);
         }
 

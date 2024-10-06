@@ -53,7 +53,32 @@ namespace Catalogo_Comercio
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
+        public void CanjearVoucher(Voucher voucher)
+        {
+            AccesoDatos datos = new AccesoDatos();
+         
+            try
+            {
+                datos.setConsulta("Update Vouchers set IdArticulo = @ArticuloId, IdCliente = @ClienteId, FechaCanje = @Fecha Where CodigoVoucher = @CodigoVoucher");
+                datos.setParametro("@ArticuloId", voucher.idArticulo);
+                datos.setParametro("@ClienteId", voucher.idCliente);
+                datos.setParametro("@Fecha", DateTime.Now.ToString("yyyy-MM-dd"));
+                datos.setParametro("@CodigoVoucher", voucher.Codigo);
+
+                datos.ejecutarConsulta();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
                 throw ex;
             }
             finally

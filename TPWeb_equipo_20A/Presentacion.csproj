@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CanjearVoucher.aspx" />
+    <Content Include="CanjeCompletado.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -84,7 +85,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaArticulos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -105,19 +105,19 @@
     <Compile Include="CanjearVoucher.aspx.designer.cs">
       <DependentUpon>CanjearVoucher.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CanjeCompletado.aspx.cs">
+      <DependentUpon>CanjeCompletado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CanjeCompletado.aspx.designer.cs">
+      <DependentUpon>CanjeCompletado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Error.aspx.cs">
-      <DependentUpon>Error.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Error.aspx.designer.cs">
-      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

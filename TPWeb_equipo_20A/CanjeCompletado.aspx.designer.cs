@@ -11,17 +11,8 @@ namespace TPWeb_equipo_20A
 {
 
 
-    public partial class VoucherInvalido
+    public partial class CanjeCompletado
     {
-
-        /// <summary>
-        /// lblMensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
 
         /// <summary>
         /// btnVolver control.

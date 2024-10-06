@@ -12,7 +12,6 @@ namespace TPWeb_equipo_20A
     public partial class ListaArticulos : System.Web.UI.Page
     {
         public List<Articulo> ListaArticulo { get; set; }
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloBD articuloBD = new ArticuloBD();  
@@ -29,13 +28,11 @@ namespace TPWeb_equipo_20A
                 repRepetidor.DataBind();
             }
         }
-
         protected void btnSeleccionar_Click(object sender, EventArgs e)
         {
             ((Voucher)Session["voucher"]).idArticulo = int.Parse(((Button)sender).CommandArgument.ToString());
             Response.Redirect("Contacto.aspx", false);
         }
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Session.Clear();

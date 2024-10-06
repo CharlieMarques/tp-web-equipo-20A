@@ -17,7 +17,19 @@ namespace TPWeb_equipo_20A
         private static Cliente cliente;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) NuevoCliente = true;
+            if (!IsPostBack)
+            {
+                NuevoCliente = true;
+                if (Session.Count > 0)
+                {
+                    if (((Voucher)Session["voucher"]).idCliente != -1)
+                    {
+                        ClienteBD clienteBD = new ClienteBD();
+                        txtDNI.Text = clienteBD.CargarCliente(((Voucher)Session["voucher"]).idCliente).Documento;
+                        txtDNI_TextChanged(txtDNI, EventArgs.Empty);
+                    }
+                }
+            }
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -26,7 +38,7 @@ namespace TPWeb_equipo_20A
         }
         protected void btnParticipar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid && ((Voucher)Session["voucher"]).idArticulo != 0)
+            if (Page.IsValid)
             {
                 try
                 {
@@ -38,16 +50,26 @@ namespace TPWeb_equipo_20A
                     {
                         ((Voucher)Session["voucher"]).idCliente = cliente.Id;
                     }
-                    VoucherDB voucherDB = new VoucherDB();
-                    voucherDB.CanjearVoucher((Voucher)Session["voucher"]);
-
-                    Response.Redirect("CanjeCompletado.aspx", false);
+                    if (((Voucher)Session["voucher"]).idArticulo != -1)
+                    {
+                        VoucherDB voucherDB = new VoucherDB();
+                        voucherDB.CanjearVoucher((Voucher)Session["voucher"]);
+                        Response.Redirect("CanjeCompletado.aspx", false);
+                    }
+                    else
+                    {
+                        Response.Redirect("ListaArticulos.aspx", false);
+                    }
                 }
                 catch (Exception ex)
                 {
                     Session.Add("Error", ex.ToString());
                     Response.Redirect("Errores.aspx", false);
                 }
+            }
+            else
+            {
+
             }
         }
         protected int CrearNuevoCliente()
